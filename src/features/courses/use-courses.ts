@@ -19,12 +19,26 @@ const mockData: Course[] = [
   },
 ];
 
-export const useCourses = (): Course[] => {
-  const [courses, setCourses] = useState<Course[]>([]);
+const fetchCourses = async (): Promise<Course[]> => {
+  return mockData;
+};
+
+type SuccessState = { status: "succeeded"; courses: Course[] };
+
+type InitialState = { status: "loading" };
+
+type State = SuccessState | InitialState;
+
+const initialState: InitialState = { status: "loading" };
+
+export const useCourses = (): State => {
+  const [state, setState] = useState<State>(initialState);
 
   useEffect(() => {
-    setCourses(mockData);
+    fetchCourses().then((courses) =>
+      setState({ status: "succeeded", courses })
+    );
   }, []);
 
-  return courses;
+  return state;
 };

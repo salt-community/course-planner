@@ -17,15 +17,19 @@ const Course = ({ course }: Props) => {
 };
 
 export const Courses = () => {
-  let courses: Course[] = useCourses();
+  let state = useCourses();
+
+  if (state.status === "loading") {
+    return <p>Loading...</p>;
+  }
 
   return (
     <section>
       <h2>Course list</h2>
 
-      {courses.length ? (
+      {state.courses.length ? (
         <ul>
-          {courses.map((course) => (
+          {state.courses.map((course) => (
             <li key={course.id}>
               <Course course={course} />
             </li>
