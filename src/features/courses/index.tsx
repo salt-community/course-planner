@@ -1,8 +1,5 @@
-type Course = {
-  id: string;
-  start: string;
-  program: "jsfs" | "dnfs" | "jfs";
-};
+import { Course } from "./types";
+import { useCourses } from "./use-courses";
 
 type Props = {
   course: Course;
@@ -39,24 +36,4 @@ export const Courses = () => {
       )}
     </section>
   );
-};
-
-const useCourses = (): Course[] => {
-  return [
-    {
-      id: "1",
-      start: "2021-01-01",
-      program: "jsfs",
-    },
-    {
-      id: "2",
-      start: "2021-01-01",
-      program: "dnfs",
-    },
-    {
-      id: "3",
-      start: "2021-01-01",
-      program: "jfs",
-    },
-  ];
 };
