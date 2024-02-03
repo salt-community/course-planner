@@ -1,45 +1,8 @@
 "use client";
 
-import { useState } from "react";
-
-type Course = {
-  id: string;
-  start: string;
-  program: "jsfs" | "dnfs" | "jfs";
-};
-
-type Props = {
-  courses: Course[];
-};
-
-let NoCourses = () => <p>No courses found.</p>;
-
-const Courses = ({ courses }: Props) => {
-  return (
-    <ul>
-      {courses.map((course) => (
-        <li key={course.id}>
-          <span>{course.start}</span>
-          <span>{course.program}</span>
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-const CoursesSection = ({ courses }: Props) => {
-  return (
-    <section>
-      <h2>Course list</h2>
-
-      {courses.length ? <Courses courses={courses} /> : <NoCourses />}
-    </section>
-  );
-};
+import { Courses } from "@/features";
 
 export default function Home() {
-  const [courses, setCourses] = useState<Course[]>([]);
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <h1>Courses</h1>
@@ -72,7 +35,7 @@ export default function Home() {
         </fieldset>
       </section>
 
-      <CoursesSection courses={courses} />
+      <Courses />
     </main>
   );
 }
