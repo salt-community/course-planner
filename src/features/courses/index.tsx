@@ -20,23 +20,7 @@ const Course = ({ course }: Props) => {
 };
 
 export const Courses = () => {
-  let courses: Course[] = [
-    {
-      id: "1",
-      start: "2021-01-01",
-      program: "jsfs",
-    },
-    {
-      id: "2",
-      start: "2021-01-01",
-      program: "dnfs",
-    },
-    {
-      id: "3",
-      start: "2021-01-01",
-      program: "jfs",
-    },
-  ];
+  let courses: Course[] = useCourses();
 
   return (
     <section>
@@ -55,4 +39,24 @@ export const Courses = () => {
       )}
     </section>
   );
+};
+
+const useCourses = (): Course[] => {
+  return [
+    {
+      id: "1",
+      start: "2021-01-01",
+      program: "jsfs",
+    },
+    {
+      id: "2",
+      start: "2021-01-01",
+      program: "dnfs",
+    },
+    {
+      id: "3",
+      start: "2021-01-01",
+      program: "jfs",
+    },
+  ];
 };
