@@ -4,7 +4,7 @@ import { useApi } from "./state";
 
 export * from "./add-course";
 
-export const Courses = () => {
+export const CourseList = () => {
   let state = useApi();
 
   if (state.status === "loading") {
