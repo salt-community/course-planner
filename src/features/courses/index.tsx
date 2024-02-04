@@ -2,6 +2,8 @@ import { Loading } from "@/components";
 import { Content } from "./components";
 import { useApi } from "./state";
 
+export * from "./add-course";
+
 export const Courses = () => {
   let state = useApi();
 
