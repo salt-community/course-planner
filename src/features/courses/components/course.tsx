@@ -1,14 +1,18 @@
 import { CourseData } from "../types";
 
 type Props = {
-  course: CourseData;
+  courses: CourseData[];
 };
 
-export const Course = ({ course }: Props) => {
+export const CourseList = ({ courses }: Props) => {
   return (
-    <>
-      <span>{course.program}</span>
-      <span>-{course.start}</span>
-    </>
+    <ul>
+      {courses.map((course) => (
+        <li key={course.id}>
+          <span>{course.program}</span>
+          <span>-{course.start}</span>
+        </li>
+      ))}
+    </ul>
   );
 };
