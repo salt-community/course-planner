@@ -9,6 +9,10 @@ export const Courses = () => {
     return <Loading />;
   }
 
+  if (state.status === "failed") {
+    return <p>Something went wrong</p>;
+  }
+
   return (
     <section>
       <h2>Course list</h2>

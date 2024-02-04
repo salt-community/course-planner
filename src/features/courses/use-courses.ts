@@ -27,7 +27,9 @@ type SuccessState = { status: "succeeded"; courses: CourseData[] };
 
 type InitialState = { status: "loading" };
 
-type State = SuccessState | InitialState;
+type ErrorState = { status: "failed"; code: string };
+
+type State = SuccessState | InitialState | ErrorState;
 
 const initialState: InitialState = { status: "loading" };
 
