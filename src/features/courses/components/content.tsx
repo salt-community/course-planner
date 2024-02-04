@@ -1,4 +1,4 @@
-import { Loading } from "@/components";
+import { Failed, Loading } from "@/components";
 import { State } from "../use-courses";
 import { NoCourses } from "./no-courses";
 import { CourseList } from "./course-list";
@@ -11,7 +11,7 @@ export const Content = ({ state }: Props) => {
   }
 
   if (state.status === "failed") {
-    return <p>Something went wrong</p>;
+    return <Failed />;
   }
 
   return state.courses.length ? (
