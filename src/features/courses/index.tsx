@@ -1,20 +1,5 @@
-import { Course } from "./types";
+import { Course, NoCourses } from "./components";
 import { useCourses } from "./use-courses";
-
-type Props = {
-  course: Course;
-};
-
-let NoCourses = () => <p>No courses found.</p>;
-
-const Course = ({ course }: Props) => {
-  return (
-    <>
-      <span>{course.program}</span>
-      <span>-{course.start}</span>
-    </>
-  );
-};
 
 export const Courses = () => {
   let state = useCourses();
