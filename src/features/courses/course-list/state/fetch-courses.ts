@@ -1,4 +1,4 @@
-import { CourseData } from "../types";
+import { CourseData } from "../../types";
 
 const mockData: CourseData[] = [
   {

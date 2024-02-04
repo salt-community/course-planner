@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CourseData } from "../types";
+import { CourseData } from "../../types";
 import { fetchCourses } from "./fetch-courses";
 
 export type SuccessState = { status: "succeeded"; courses: CourseData[] };
