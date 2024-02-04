@@ -1,5 +1,5 @@
 import { Failed, Loading } from "@/components";
-import { State } from "../use-courses";
+import { State } from "../state/use-courses";
 import { NoCourses } from "./no-courses";
 import { CourseList } from "./course-list";
 

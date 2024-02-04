@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { CourseData } from "./types";
+import { CourseData } from "../types";
+import { fetchCourses } from "./fetch-courses";
 
 export type SuccessState = { status: "succeeded"; courses: CourseData[] };
 
@@ -9,31 +10,9 @@ export type ErrorState = { status: "failed"; code: string };
 
 export type State = InitialState | SuccessState | ErrorState;
 
-const mockData: CourseData[] = [
-  {
-    id: "1",
-    start: "2021-01-01",
-    program: "jsfs",
-  },
-  {
-    id: "2",
-    start: "2021-01-01",
-    program: "dnfs",
-  },
-  {
-    id: "3",
-    start: "2021-01-01",
-    program: "jfs",
-  },
-];
-
-const fetchCourses = async (): Promise<CourseData[]> => {
-  return mockData;
-};
-
 const initialState: InitialState = { status: "loading" };
 
-export const useCourses = (): State => {
+export const useApi = (): State => {
   const [state, setState] = useState<State>(initialState);
 
   useEffect(() => {

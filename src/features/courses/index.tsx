@@ -1,9 +1,9 @@
 import { Loading } from "@/components";
 import { Content } from "./components";
-import { useCourses } from "./use-courses";
+import { useApi } from "./state";
 
 export const Courses = () => {
-  let state = useCourses();
+  let state = useApi();
 
   if (state.status === "loading") {
     return <Loading />;
@@ -15,7 +15,7 @@ export const Courses = () => {
 
   return (
     <section>
-      <h2>Course list</h2>
+      <h2>Courses</h2>
 
       <Content state={state} />
     </section>
