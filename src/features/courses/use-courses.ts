@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import { CourseData } from "./types";
 
+export type SuccessState = { status: "succeeded"; courses: CourseData[] };
+
+export type InitialState = { status: "loading" };
+
+export type ErrorState = { status: "failed"; code: string };
+
+export type State = InitialState | SuccessState | ErrorState;
+
 const mockData: CourseData[] = [
   {
     id: "1",
@@ -22,14 +30,6 @@ const mockData: CourseData[] = [
 const fetchCourses = async (): Promise<CourseData[]> => {
   return mockData;
 };
-
-type SuccessState = { status: "succeeded"; courses: CourseData[] };
-
-type InitialState = { status: "loading" };
-
-type ErrorState = { status: "failed"; code: string };
-
-type State = SuccessState | InitialState | ErrorState;
 
 const initialState: InitialState = { status: "loading" };
 
