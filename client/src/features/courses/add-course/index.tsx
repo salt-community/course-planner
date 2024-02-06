@@ -1,4 +1,4 @@
-import { FullSection, SectionTitle } from "@/components";
+import { FullSection } from "@/components";
 
 export const AddCourse = () => {
   return (

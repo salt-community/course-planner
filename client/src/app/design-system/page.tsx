@@ -1,29 +1,36 @@
 "use client";
 
-import { Main, PageTitle, Loading, Failed, SectionTitle } from "@/components";
+import {
+  Main,
+  PageTitle,
+  Loading,
+  Failed,
+  FullSection,
+  DateInput,
+  useDate,
+} from "@/components";
 
 export default function Home() {
+  const dateState = useDate();
+
   return (
     <Main>
-      <div className="col-span-full">
-        <SectionTitle>PageTitle</SectionTitle>
+      <FullSection title="PageTitle">
         <PageTitle>Page Title</PageTitle>
-      </div>
+      </FullSection>
 
-      <div className="col-span-full">
-        <SectionTitle>SectionTitle</SectionTitle>
-        <SectionTitle>Section Title</SectionTitle>
-      </div>
-
-      <div className="col-span-full">
-        <SectionTitle>Loading</SectionTitle>
+      <FullSection title="Loading">
         <Loading />
-      </div>
+      </FullSection>
 
-      <div className="col-span-full">
-        <SectionTitle>Failed</SectionTitle>
+      <FullSection title="Failed">
         <Failed />
-      </div>
+      </FullSection>
+
+      <FullSection title="DateInput">
+        <DateInput dateState={dateState} />
+        <p>Selected date: {dateState.date?.toISOString()}</p>
+      </FullSection>
     </Main>
   );
 }
