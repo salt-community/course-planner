@@ -6,5 +6,5 @@ type Props = {
 };
 
 export const PageTitle = ({ children }: Props) => {
-  return <h1 className="text-2xl">{children}</h1>;
+  return <h1 className="col-span-full text-2xl">{children}</h1>;
 };

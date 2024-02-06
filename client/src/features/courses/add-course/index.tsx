@@ -1,8 +1,8 @@
+import { FullSection, SectionTitle } from "@/components";
+
 export const AddCourse = () => {
   return (
-    <section>
-      <h2>Add Course</h2>
-
+    <FullSection title="Add Course">
       <fieldset>
         <label htmlFor="course-start">Start</label>
         <input type="date" name="course-start" id="course-start" />
@@ -26,6 +26,6 @@ export const AddCourse = () => {
           </span>
         </div>
       </fieldset>
-    </section>
+    </FullSection>
   );
 };
