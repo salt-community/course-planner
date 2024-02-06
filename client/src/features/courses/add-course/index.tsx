@@ -1,11 +1,13 @@
-import { FullSection } from "@/components";
+import { DateInput, FullSection, useDate } from "@/components";
 
 export const AddCourse = () => {
+  const dateState = useDate();
+
   return (
     <FullSection title="Add Course">
       <fieldset>
         <label htmlFor="course-start">Start</label>
-        <input type="date" name="course-start" id="course-start" />
+        <DateInput dateState={dateState} />
       </fieldset>
 
       <fieldset>
