@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 
 export async function POST(req: Request, res: Response) {
   try {
-    const { id } = await prismaClient.course.create({
+    const { id } = await prismaClient.courseRow.create({
       data: {
         program: "jsfs",
         startDate: new Date("2024-05-01"),
