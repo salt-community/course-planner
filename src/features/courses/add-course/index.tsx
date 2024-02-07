@@ -3,6 +3,16 @@ import { DateInput, FullSection, useDate } from "@/components";
 export const AddCourse = () => {
   const dateState = useDate();
 
+  const createCourse = () => {
+    fetch("http://localhost:3000/api/courses/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ startDate: dateState.date, program: "jsfs" }),
+    });
+  };
+
   return (
     <FullSection title="Add Course">
       <fieldset>
@@ -28,6 +38,8 @@ export const AddCourse = () => {
           </span>
         </div>
       </fieldset>
+
+      <button onClick={createCourse}>Create</button>
     </FullSection>
   );
 };
