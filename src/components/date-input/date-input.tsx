@@ -1,5 +1,3 @@
-import { Calendar } from "../ui";
-
 type Props = {
   dateState: {
     date: Date | undefined;
