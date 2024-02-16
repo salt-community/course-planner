@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useDate = () => {
-  const [date, setDate] = useState<Date | undefined>();
+  const [date, setDate] = useState<Date>(new Date(0));
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
