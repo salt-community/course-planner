@@ -8,6 +8,7 @@ import {
   FullSection,
   DateInput,
   useDate,
+  Button,
 } from "@/components";
 
 export default function Home() {
@@ -25,6 +26,10 @@ export default function Home() {
 
       <FullSection title="Failed">
         <Failed />
+      </FullSection>
+
+      <FullSection title="Button">
+        <Button />
       </FullSection>
 
       <FullSection title="DateInput">
