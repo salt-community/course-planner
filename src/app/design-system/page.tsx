@@ -9,6 +9,7 @@ import {
   DateInput,
   useDate,
   CtaButton,
+  RadioGroup,
 } from "@/components";
 
 export default function Home() {
@@ -35,6 +36,13 @@ export default function Home() {
       <FullSection title="DateInput">
         <DateInput dateState={dateState} />
         <p>Selected date: {dateState.date?.toISOString()}</p>
+      </FullSection>
+
+      <FullSection title="Radio Group">
+        <RadioGroup
+          label="Radio Group"
+          choices={{ "First choice": "C1", "Second choice": "C2" }}
+        />
       </FullSection>
     </Main>
   );
