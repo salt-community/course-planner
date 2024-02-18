@@ -3,10 +3,14 @@
 import { NextUIProvider } from "@nextui-org/react";
 import { Button as NextButton } from "@nextui-org/react";
 
-export const Button = () => {
+type Props = {
+  children: React.ReactNode;
+};
+
+export const Button = ({ children }: Props) => {
   return (
     <NextUIProvider>
-      <NextButton>Button</NextButton>
+      <NextButton>{children}</NextButton>
     </NextUIProvider>
   );
 };
