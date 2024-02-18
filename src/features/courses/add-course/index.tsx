@@ -1,4 +1,4 @@
-import { Button, DateInput, FullSection, useDate } from "@/components";
+import { CtaButton, DateInput, FullSection, useDate } from "@/components";
 
 export const AddCourse = () => {
   const dateState = useDate();
@@ -39,7 +39,7 @@ export const AddCourse = () => {
         </div>
       </fieldset>
 
-      <Button onClick={createCourse}>Create</Button>
+      <CtaButton onClick={createCourse}>Create</CtaButton>
     </FullSection>
   );
 };

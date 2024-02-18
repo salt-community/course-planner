@@ -8,10 +8,12 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const Button = ({ onClick, children }: Props) => {
+export const CtaButton = ({ onClick, children }: Props) => {
   return (
     <NextUIProvider>
-      <NextButton onClick={onClick}>{children}</NextButton>
+      <NextButton color="primary" onClick={onClick}>
+        {children}
+      </NextButton>
     </NextUIProvider>
   );
 };

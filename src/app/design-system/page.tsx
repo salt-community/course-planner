@@ -8,7 +8,7 @@ import {
   FullSection,
   DateInput,
   useDate,
-  Button,
+  CtaButton,
 } from "@/components";
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
       </FullSection>
 
       <FullSection title="Button">
-        <Button onClick={() => {}}>Press</Button>
+        <CtaButton onClick={() => {}}>Press</CtaButton>
       </FullSection>
 
       <FullSection title="DateInput">
