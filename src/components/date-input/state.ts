@@ -10,3 +10,5 @@ export const useDate = () => {
 
   return { date, setDate, hydrated };
 };
+
+export type DateState = ReturnType<typeof useDate>;
