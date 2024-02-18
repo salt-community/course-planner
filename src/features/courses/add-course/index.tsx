@@ -1,4 +1,4 @@
-import { DateInput, FullSection, useDate } from "@/components";
+import { Button, DateInput, FullSection, useDate } from "@/components";
 
 export const AddCourse = () => {
   const dateState = useDate();
@@ -39,7 +39,7 @@ export const AddCourse = () => {
         </div>
       </fieldset>
 
-      <button onClick={createCourse}>Create</button>
+      <Button onClick={createCourse}>Create</Button>
     </FullSection>
   );
 };

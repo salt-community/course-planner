@@ -29,7 +29,7 @@ export default function Home() {
       </FullSection>
 
       <FullSection title="Button">
-        <Button>Press</Button>
+        <Button onClick={() => {}}>Press</Button>
       </FullSection>
 
       <FullSection title="DateInput">
